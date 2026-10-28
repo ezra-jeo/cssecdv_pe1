@@ -1,0 +1,115 @@
+{
+  "status": "PASS",
+  "output": "C:\\Users\\Ezra\\OneDrive - De La Salle University - Manila\\Documents\\DLSU\\4th_Year\\CSSECDV\\PE1\\DREAD-Matrix.csv",
+  "cwe_rows": 19,
+  "columns": 13,
+  "source_mapping_checks": 117,
+  "weight_verification": "PDF table extraction matches independent check-mark coordinate counts",
+  "formula_verification": "All 19 probability, impact, weighted risk and competition-rank values agree with independent arithmetic.",
+  "dependency_verification": "Changing Damage Potential updates Affected Users, Impact and Overall Risk; original value restored before export.",
+  "defaults": [
+    "CWE-918: Exploitability=10: Likelihood Of Exploit unavailable"
+  ],
+  "top_ranked": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+  "highest_risk": 4950,
+  "ranking": [
+    {
+      "cwe": "CWE-89",
+      "risk": 4950,
+      "rank": 1
+    },
+    {
+      "cwe": "CWE-862",
+      "risk": 4472,
+      "rank": 2
+    },
+    {
+      "cwe": "CWE-20",
+      "risk": 4092,
+      "rank": 3
+    },
+    {
+      "cwe": "CWE-863",
+      "risk": 3410,
+      "rank": 4
+    },
+    {
+      "cwe": "CWE-79",
+      "risk": 1860,
+      "rank": 5
+    },
+    {
+      "cwe": "CWE-22",
+      "risk": 1640,
+      "rank": 6
+    },
+    {
+      "cwe": "CWE-94",
+      "risk": 672,
+      "rank": 7
+    },
+    {
+      "cwe": "CWE-918",
+      "risk": 504,
+      "rank": 8
+    },
+    {
+      "cwe": "CWE-798",
+      "risk": 468,
+      "rank": 9
+    },
+    {
+      "cwe": "CWE-269",
+      "risk": 462,
+      "rank": 10
+    },
+    {
+      "cwe": "CWE-287",
+      "risk": 400,
+      "rank": 11
+    },
+    {
+      "cwe": "CWE-502",
+      "risk": 342,
+      "rank": 12
+    },
+    {
+      "cwe": "CWE-78",
+      "risk": 296,
+      "rank": 13
+    },
+    {
+      "cwe": "CWE-200",
+      "risk": 272,
+      "rank": 14
+    },
+    {
+      "cwe": "CWE-306",
+      "risk": 272,
+      "rank": 14
+    },
+    {
+      "cwe": "CWE-400",
+      "risk": 232,
+      "rank": 16
+    },
+    {
+      "cwe": "CWE-77",
+      "risk": 152,
+      "rank": 17
+    },
+    {
+      "cwe": "CWE-352",
+      "risk": 144,
+      "rank": 18
+    },
+    {
+      "cwe": "CWE-434",
+      "risk": 126,
+      "rank": 19
+    }
+  ],
+  "csv_round_trip": "PASS: 19 distinct CWEs, 13 columns, numeric scores, correct arithmetic, descending risk order and correct tie ranks.",
+  "csv_sha256": "9fd5a15e3335886e7bb888c74f766a1023cdd6e2359ea5a65ce64c80ecc8823a",
+  "review_note": "Damage uses the literal Common Consequences row-count rule; assignment sample conflicts with current CWE-73 table. Actual Table 3 weights supersede illustrative rubric counts."
+}

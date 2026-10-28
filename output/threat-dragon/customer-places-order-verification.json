@@ -1,0 +1,252 @@
+{
+  "status": "PASS",
+  "diagram_count": 1,
+  "component_count": 4,
+  "directed_flow_count": 5,
+  "trust_boundary_count": 3,
+  "unique_source_threat_count": 18,
+  "threat_attachment_count": 32,
+  "mapping_policy": "Section 5.2.1 steps 1.1-1.8. Five directed transfers, four components, three boundaries. Validation/storage/display are notes. All Table 2 mappings retained for present shared components, including threats concerning other workflows. STRIDE capitalization follows Threat Dragon. Severity uses Table 3 check counts. Security requirements are not independently verified implementation claims.",
+  "checks": [
+    "Official OWASP Threat Dragon v2 schema passed",
+    "All 32 Table 2 affected-component pairs match exactly",
+    "All severities derived from Table 3 checks",
+    "Five directed flows match section 5.2.1",
+    "Identifiers unique",
+    "Final diagram PNG and in-app screenshot inspected; supported built-in thumbnail reference used"
+  ],
+  "threat_severities": {
+    "T-001": {
+      "mapped_cwes": [
+        79,
+        89,
+        287,
+        306,
+        862
+      ],
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-002": {
+      "mapped_cwes": [
+        79,
+        89,
+        287,
+        306,
+        862
+      ],
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-003": {
+      "mapped_cwes": [
+        22,
+        77,
+        78,
+        79,
+        94
+      ],
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-004": {
+      "mapped_cwes": [
+        20,
+        79,
+        89,
+        269,
+        352,
+        862,
+        863
+      ],
+      "check_count": 7,
+      "severity": "Medium"
+    },
+    "T-005": {
+      "mapped_cwes": [
+        20,
+        89,
+        269,
+        434,
+        862,
+        863
+      ],
+      "check_count": 6,
+      "severity": "Medium"
+    },
+    "T-006": {
+      "mapped_cwes": [
+        20,
+        89,
+        269,
+        862,
+        863
+      ],
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-007": {
+      "mapped_cwes": [
+        22,
+        77,
+        78,
+        94,
+        434,
+        502
+      ],
+      "check_count": 6,
+      "severity": "Medium"
+    },
+    "T-008": {
+      "mapped_cwes": [
+        20,
+        89,
+        269,
+        862,
+        863
+      ],
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-009": {
+      "mapped_cwes": [
+        20,
+        89,
+        269,
+        862,
+        863
+      ],
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-010": {
+      "mapped_cwes": [
+        20,
+        22,
+        79,
+        89,
+        200,
+        269,
+        798,
+        862,
+        863,
+        918
+      ],
+      "check_count": 10,
+      "severity": "High"
+    },
+    "T-011": {
+      "mapped_cwes": [
+        20,
+        22,
+        79,
+        89,
+        200,
+        269,
+        798,
+        862,
+        863,
+        918
+      ],
+      "check_count": 10,
+      "severity": "High"
+    },
+    "T-012": {
+      "mapped_cwes": [
+        22,
+        77,
+        78,
+        200,
+        798,
+        918
+      ],
+      "check_count": 6,
+      "severity": "Medium"
+    },
+    "T-013": {
+      "mapped_cwes": [
+        79,
+        89,
+        200,
+        269,
+        862,
+        863,
+        918
+      ],
+      "check_count": 7,
+      "severity": "Medium"
+    },
+    "T-014": {
+      "mapped_cwes": [
+        20,
+        77,
+        78,
+        89,
+        94,
+        400,
+        434
+      ],
+      "check_count": 7,
+      "severity": "Medium"
+    },
+    "T-015": {
+      "mapped_cwes": [
+        89,
+        400
+      ],
+      "check_count": 2,
+      "severity": "Low"
+    },
+    "T-016": {
+      "mapped_cwes": [
+        20,
+        79,
+        89,
+        269,
+        287,
+        306,
+        352,
+        502,
+        862,
+        863
+      ],
+      "check_count": 10,
+      "severity": "High"
+    },
+    "T-017": {
+      "mapped_cwes": [
+        20,
+        79,
+        89,
+        269,
+        287,
+        306,
+        352,
+        502,
+        862,
+        863
+      ],
+      "check_count": 10,
+      "severity": "High"
+    },
+    "T-018": {
+      "mapped_cwes": [
+        20,
+        79,
+        89,
+        269,
+        862,
+        863
+      ],
+      "check_count": 6,
+      "severity": "Medium"
+    }
+  },
+  "visual_validation": "PASS: imported in Threat Dragon 2.6.2, all five directions and three named boundaries visually inspected; backend panel displays all 18 entries with severity badges; final PNG exported by Threat Dragon.",
+  "artifacts": [
+    "customer-places-order.json",
+    "customer-places-order.png",
+    "customer-places-order-in-threat-dragon.png"
+  ],
+  "thumbnail_compatibility": "Threat Dragon overview resolves built-in assets; data-URL thumbnail removed after UI compatibility check."
+}

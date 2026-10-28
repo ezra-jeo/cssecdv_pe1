@@ -1,0 +1,390 @@
+{
+  "source_severity_counts": {
+    "T-001": {
+      "count": 5,
+      "severity": "Medium"
+    },
+    "T-002": {
+      "count": 5,
+      "severity": "Medium"
+    },
+    "T-003": {
+      "count": 5,
+      "severity": "Medium"
+    },
+    "T-004": {
+      "count": 7,
+      "severity": "Medium"
+    },
+    "T-005": {
+      "count": 6,
+      "severity": "Medium"
+    },
+    "T-006": {
+      "count": 5,
+      "severity": "Medium"
+    },
+    "T-007": {
+      "count": 6,
+      "severity": "Medium"
+    },
+    "T-008": {
+      "count": 5,
+      "severity": "Medium"
+    },
+    "T-009": {
+      "count": 5,
+      "severity": "Medium"
+    },
+    "T-010": {
+      "count": 10,
+      "severity": "High"
+    },
+    "T-011": {
+      "count": 10,
+      "severity": "High"
+    },
+    "T-012": {
+      "count": 6,
+      "severity": "Medium"
+    },
+    "T-013": {
+      "count": 7,
+      "severity": "Medium"
+    },
+    "T-014": {
+      "count": 7,
+      "severity": "Medium"
+    },
+    "T-015": {
+      "count": 2,
+      "severity": "Low"
+    },
+    "T-016": {
+      "count": 10,
+      "severity": "High"
+    },
+    "T-017": {
+      "count": 10,
+      "severity": "High"
+    },
+    "T-018": {
+      "count": 6,
+      "severity": "Medium"
+    }
+  },
+  "models": {
+    "pasted": {
+      "path": "C:\\Users\\Ezra\\OneDrive - De La Salle University - Manila\\Documents\\DLSU\\4th_Year\\CSSECDV\\PE1\\STRIDE-Data-Flow-Diagram-Threat-Identification-Almin-Del-Rosario-Gan.json",
+      "sha256": "25c21fd381901a8bb724f8f9f437a06755dab98038e251771b200bb76b9910e6",
+      "diagram_count": 4,
+      "diagram_ids": [
+        0,
+        7,
+        8,
+        10
+      ],
+      "diagrams": [
+        {
+          "id": 0,
+          "title": "Customer Places an Order",
+          "flows": 5,
+          "boundaries": 3,
+          "threat_attachments": 32,
+          "severity_distribution": {
+            "Medium": 24,
+            "High": 6,
+            "Low": 2
+          },
+          "issues": []
+        },
+        {
+          "id": 7,
+          "title": "Barista Updates Order Status",
+          "flows": 7,
+          "boundaries": 3,
+          "threat_attachments": 32,
+          "severity_distribution": {
+            "Medium": 24,
+            "High": 6,
+            "Low": 2
+          },
+          "issues": []
+        },
+        {
+          "id": 8,
+          "title": "Manager Accesses Basic Sales Reports",
+          "flows": 4,
+          "boundaries": 3,
+          "threat_attachments": 32,
+          "severity_distribution": {
+            "Medium": 24,
+            "High": 6,
+            "Low": 2
+          },
+          "issues": []
+        },
+        {
+          "id": 10,
+          "title": "Administrator Adds New Menu Item",
+          "flows": 6,
+          "boundaries": 3,
+          "threat_attachments": 32,
+          "severity_distribution": {
+            "Medium": 24,
+            "High": 6,
+            "Low": 2
+          },
+          "issues": []
+        }
+      ],
+      "threat_count": 128,
+      "unique_threat_numbers": 128,
+      "unique_threat_ids": 128,
+      "threatTop": 128,
+      "schema_error_count": 0,
+      "schema_errors": [],
+      "schema_nullable_aware_error_count": 0,
+      "schema_interpretation": "Native schema permits null with nullable:true; strict Draft7 null warnings are not import failures.",
+      "unchanged_during_audit": true,
+      "strict_draft7_error_count": 34,
+      "strict_draft7_errors": [
+        {
+          "path": "detail/diagrams/0/cells/0/attrs/body/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/0/cells/2/attrs/body/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/0/cells/3/attrs/body/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/0/cells/4/attrs/line/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/0/cells/5/attrs/line/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/0/cells/6/attrs/line/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/0/cells/7/attrs/line/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/0/cells/8/attrs/line/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/1/cells/0/attrs/body/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/1/cells/2/attrs/body/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/1/cells/3/attrs/body/strokeDasharray",
+          "error": "None is not of type 'string'"
+        },
+        {
+          "path": "detail/diagrams/1/cells/4/attrs/line/strokeDasharray",
+          "error": "None is not of type 'string'"
+        }
+      ],
+      "overall_dfd_status": "PARTIAL: workflow findings F1-F5"
+    },
+    "ours": {
+      "path": "C:\\Users\\Ezra\\OneDrive - De La Salle University - Manila\\Documents\\DLSU\\4th_Year\\CSSECDV\\PE1\\output\\threat-dragon\\brew-and-bloom-pe1.json",
+      "sha256": "d27cac9966bf935114f58425516a8dac0a5a0c83fc8519b762a84a13c847354f",
+      "diagram_count": 4,
+      "diagram_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "diagrams": [
+        {
+          "id": 0,
+          "title": "Customer Places an Order",
+          "flows": 5,
+          "boundaries": 3,
+          "threat_attachments": 32,
+          "severity_distribution": {
+            "Medium": 24,
+            "High": 6,
+            "Low": 2
+          },
+          "issues": []
+        },
+        {
+          "id": 1,
+          "title": "Barista Updates Order Status",
+          "flows": 6,
+          "boundaries": 2,
+          "threat_attachments": 32,
+          "severity_distribution": {
+            "Medium": 24,
+            "High": 6,
+            "Low": 2
+          },
+          "issues": []
+        },
+        {
+          "id": 2,
+          "title": "Manager Accesses Basic Sales Reports",
+          "flows": 4,
+          "boundaries": 2,
+          "threat_attachments": 32,
+          "severity_distribution": {
+            "Medium": 24,
+            "High": 6,
+            "Low": 2
+          },
+          "issues": []
+        },
+        {
+          "id": 3,
+          "title": "Administrator Adds New Menu Item",
+          "flows": 3,
+          "boundaries": 2,
+          "threat_attachments": 32,
+          "severity_distribution": {
+            "Medium": 24,
+            "High": 6,
+            "Low": 2
+          },
+          "issues": []
+        }
+      ],
+      "threat_count": 128,
+      "unique_threat_numbers": 128,
+      "unique_threat_ids": 128,
+      "threatTop": 128,
+      "schema_error_count": 0,
+      "schema_errors": [],
+      "schema_nullable_aware_error_count": 0,
+      "schema_interpretation": "Native schema permits null with nullable:true; strict Draft7 null warnings are not import failures.",
+      "unchanged_during_audit": true,
+      "strict_draft7_error_count": 0,
+      "strict_draft7_errors": [],
+      "overall_dfd_status": "PASS within stated DFD scope"
+    }
+  },
+  "audit_scope": "Threat metadata and structure checked against both PDFs; workflow semantics recorded separately under manual_findings. No model was changed.",
+  "manual_findings": [
+    {
+      "id": "F1",
+      "priority": "High",
+      "diagram": "Manager Accesses Basic Sales Reports",
+      "source_steps": [
+        "3.4",
+        "3.5"
+      ],
+      "line": 2802,
+      "issue": "No backend-to-Manager transfer carries the processed basic sales report. The sole backend-to-frontend flow is labeled authentication/authorization (3.2).",
+      "required_change": "Represent 3.4 as the returned basic sales report and show totals/formatting as backend processing. Frontend displays it in 3.5.",
+      "ours": "The 3.4 processed report response and 3.5 display note are present."
+    },
+    {
+      "id": "F2",
+      "priority": "Medium",
+      "diagram": "Barista, Manager, Administrator",
+      "source_steps": [
+        "2.2",
+        "3.2",
+        "4.3"
+      ],
+      "lines": [
+        2539,
+        3779,
+        5137,
+        5189
+      ],
+      "issue": "Authentication and authorization are drawn as backend-to-frontend arrows named after server actions, without a data payload. The source places those decisions at the backend.",
+      "required_change": "Use process descriptions/notes for these checks. If a distinct login response is intentional, identify its actual data (such as authentication result/session) and keep authorization decisions at the backend.",
+      "ours": "These operations are backend notes/descriptions rather than invented response transfers."
+    },
+    {
+      "id": "F3",
+      "priority": "Medium",
+      "diagram": "Customer Places an Order",
+      "source_steps": [
+        "1.5"
+      ],
+      "line": 1238,
+      "issue": "Order write has no explicit payment-success guard in its name or description. Sequence numbering alone does not state the condition.",
+      "required_change": "Annotate the write as conditional on successful payment. Do not imply the source defines a detailed failure-handling path.",
+      "ours": "The database-write label and description explicitly state payment must succeed."
+    },
+    {
+      "id": "F4",
+      "priority": "Medium",
+      "diagram": "Customer Places an Order",
+      "source_steps": [
+        "5.1",
+        "1.3",
+        "1.4"
+      ],
+      "lines": [
+        1134,
+        1186
+      ],
+      "issue": "Both payment flows have isEncrypted=false while the source and the boundary description state secured communication channels. This is a model-metadata inconsistency, not evidence about a running implementation.",
+      "required_change": "Make the payment-flow security metadata consistent with the stated secured channel.",
+      "ours": "Both payment directions have isEncrypted=true; unspecified transports are not asserted."
+    },
+    {
+      "id": "F5",
+      "priority": "Low",
+      "diagram": "Barista and Manager",
+      "source_steps": [
+        "2.5",
+        "2.6",
+        "3.2",
+        "3.3"
+      ],
+      "lines": [
+        2591,
+        3831
+      ],
+      "issue": "Barista sending the update is labeled 2.5, but sending is 2.6; 2.5 is local selection/change. Manager sales-data query is labeled 3.3a, but the backend query belongs to 3.2; 3.3 is the database retrieval/response.",
+      "required_change": "Correct the step references; use suffixes only within the corresponding source step.",
+      "ours": "The sending/query flows reference 2.6 and 3.2 respectively."
+    },
+    {
+      "id": "F6",
+      "priority": "Advisory",
+      "diagram": "All workflows",
+      "source_steps": [
+        "1.2",
+        "2.7",
+        "3.4",
+        "4.3"
+      ],
+      "issue": "The pasted model describes the backend generically and omits workflow-specific business checks and processing details. Its boundary does mention input validation, so validation is not wholly absent.",
+      "required_change": "Document item availability/customization checks, status validation, report calculation/formatting, and new-menu-item input validation in process descriptions or notes. No extra arrows are needed.",
+      "ours": "Workflow-specific processing is documented in notes and descriptions."
+    }
+  ],
+  "visual_validation": {
+    "pasted": "All four diagrams opened and inspected in Threat Dragon 2.6.2. Strings used as flow labels render correctly. The model imports; nullable style properties do not prevent native import. Screenshots saved separately.",
+    "ours": "Current JSON checked against source and prior native PNG exports reviewed; structure and required transfer directions match."
+  },
+  "nonissues": [
+    "Four nonconsecutive diagram IDs (0,7,8,10) are valid; diagramTop=11 is consistent.",
+    "Cell identifiers reused across separate graphs are not dangling references or within-diagram collisions.",
+    "Missing custom sourceId/score fields in pasted threats are not rubric failures: titles and required metadata still match.",
+    "A separate login request can be a reasonable decomposition; extra arrows are not wrong solely because of their count.",
+    "Unused payment nodes/boundaries in staff workflows are context clutter rather than a missing-flow failure.",
+    "Both models preserve all 32 Table 2 component-threat pairs per diagram (128 attachments total)."
+  ],
+  "submission_status": "Neither JSON alone is the required Part 1 submission. A Threat Dragon PDF report and matching diagram screenshot backups are required. Existing PNGs under output/threat-dragon correspond to our project; new-model screenshots from this audit are review captures, not final submission exports. DREAD scoring was not reviewed."
+}

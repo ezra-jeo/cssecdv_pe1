@@ -1,0 +1,148 @@
+{
+  "status": "PASS",
+  "project": "brew-and-bloom-pe1.json",
+  "diagrams": [
+    {
+      "id": 0,
+      "title": "Customer Places an Order",
+      "directed_flows": 5,
+      "boundaries": 3,
+      "threat_attachments": 32,
+      "metadata_mapping_severity": "PASS",
+      "flow_endpoint_integrity": "PASS",
+      "visual_validation": "PASS: opened and rendered in Threat Dragon; exported PNG visually checked for correct directions, connected arrows, readable labels and trust boundaries."
+    },
+    {
+      "id": 1,
+      "title": "Barista Updates Order Status",
+      "directed_flows": 6,
+      "boundaries": 2,
+      "threat_attachments": 32,
+      "metadata_mapping_severity": "PASS",
+      "flow_endpoint_integrity": "PASS",
+      "visual_validation": "PASS: opened and rendered in Threat Dragon; exported PNG visually checked for correct directions, connected arrows, readable labels and trust boundaries."
+    },
+    {
+      "id": 2,
+      "title": "Manager Accesses Basic Sales Reports",
+      "directed_flows": 4,
+      "boundaries": 2,
+      "threat_attachments": 32,
+      "metadata_mapping_severity": "PASS",
+      "flow_endpoint_integrity": "PASS",
+      "visual_validation": "PASS: opened and rendered in Threat Dragon; exported PNG visually checked for correct directions, connected arrows, readable labels and trust boundaries."
+    },
+    {
+      "id": 3,
+      "title": "Administrator Adds New Menu Item",
+      "directed_flows": 3,
+      "boundaries": 2,
+      "threat_attachments": 32,
+      "metadata_mapping_severity": "PASS",
+      "flow_endpoint_integrity": "PASS",
+      "visual_validation": "PASS: opened and rendered in Threat Dragon; exported PNG visually checked for correct directions, connected arrows, readable labels and trust boundaries."
+    }
+  ],
+  "total_threat_attachments": 128,
+  "schema": "Official OWASP Threat Dragon v2 schema",
+  "source": "Threat Model Document - Coffee Ordering Web App.pdf, sections 5.1, 5.2 and Tables 2, 3",
+  "checks": [
+    "All four diagrams in one project",
+    "All flow endpoints and referenced ports valid",
+    "All three required trust boundary types present across project",
+    "All source threat titles/descriptions/category meanings match",
+    "All 32 source component-threat mappings preserved per diagram",
+    "All severities independently recomputed from PDF Table 3",
+    "All cell IDs, threat IDs and threat numbers unique",
+    "All four diagram titles visible in Threat Dragon overview",
+    "Final native PNG export for each diagram visually inspected",
+    "Circular process ports corrected and all final port references validated",
+    "Supported built-in thumbnail references confirmed in app overview"
+  ],
+  "threat_severities": {
+    "T-001": {
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-002": {
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-003": {
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-004": {
+      "check_count": 7,
+      "severity": "Medium"
+    },
+    "T-005": {
+      "check_count": 6,
+      "severity": "Medium"
+    },
+    "T-006": {
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-007": {
+      "check_count": 6,
+      "severity": "Medium"
+    },
+    "T-008": {
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-009": {
+      "check_count": 5,
+      "severity": "Medium"
+    },
+    "T-010": {
+      "check_count": 10,
+      "severity": "High"
+    },
+    "T-011": {
+      "check_count": 10,
+      "severity": "High"
+    },
+    "T-012": {
+      "check_count": 6,
+      "severity": "Medium"
+    },
+    "T-013": {
+      "check_count": 7,
+      "severity": "Medium"
+    },
+    "T-014": {
+      "check_count": 7,
+      "severity": "Medium"
+    },
+    "T-015": {
+      "check_count": 2,
+      "severity": "Low"
+    },
+    "T-016": {
+      "check_count": 10,
+      "severity": "High"
+    },
+    "T-017": {
+      "check_count": 10,
+      "severity": "High"
+    },
+    "T-018": {
+      "check_count": 6,
+      "severity": "Medium"
+    }
+  },
+  "artifacts": [
+    "brew-and-bloom-pe1.json",
+    "customer-places-order.png",
+    "barista-updates-order-status.png",
+    "manager-accesses-basic-sales-reports.png",
+    "administrator-adds-new-menu-item.png",
+    "customer-places-order-in-threat-dragon.png",
+    "barista-updates-order-status-in-threat-dragon.png",
+    "manager-accesses-basic-sales-reports-in-threat-dragon.png",
+    "administrator-adds-new-menu-item-in-threat-dragon.png"
+  ],
+  "remaining_assignment_work": "Threat Dragon PDF report export and Part 2 DREAD matrix are outside this three-DFD request and are not included."
+}
