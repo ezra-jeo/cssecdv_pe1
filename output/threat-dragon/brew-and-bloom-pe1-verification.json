@@ -15,7 +15,7 @@
     {
       "id": 1,
       "title": "Barista Updates Order Status",
-      "directed_flows": 6,
+      "directed_flows": 7,
       "boundaries": 2,
       "threat_attachments": 32,
       "metadata_mapping_severity": "PASS",
@@ -25,7 +25,7 @@
     {
       "id": 2,
       "title": "Manager Accesses Basic Sales Reports",
-      "directed_flows": 4,
+      "directed_flows": 5,
       "boundaries": 2,
       "threat_attachments": 32,
       "metadata_mapping_severity": "PASS",
@@ -35,7 +35,7 @@
     {
       "id": 3,
       "title": "Administrator Adds New Menu Item",
-      "directed_flows": 3,
+      "directed_flows": 4,
       "boundaries": 2,
       "threat_attachments": 32,
       "metadata_mapping_severity": "PASS",
@@ -57,7 +57,9 @@
     "All four diagram titles visible in Threat Dragon overview",
     "Final native PNG export for each diagram visually inspected",
     "Circular process ports corrected and all final port references validated",
-    "Supported built-in thumbnail references confirmed in app overview"
+    "Supported built-in thumbnail references confirmed in app overview",
+    "Administrator step 4.1 login request explicitly connects frontend to backend; menu navigation remains a note; all three project JSON copies identical",
+    "Separate login and business-request arrows for Manager and Barista; maximum two logical data items per arrow reviewed"
   ],
   "threat_severities": {
     "T-001": {
@@ -144,5 +146,29 @@
     "manager-accesses-basic-sales-reports-in-threat-dragon.png",
     "administrator-adds-new-menu-item-in-threat-dragon.png"
   ],
-  "remaining_assignment_work": "Threat Dragon PDF report export and Part 2 DREAD matrix are outside this three-DFD request and are not included."
+  "remaining_assignment_work": "User will regenerate the root Threat Dragon PDF report from the corrected model. Existing DREAD matrix is unchanged.",
+  "administrator_login_correction": {
+    "status": "PASS",
+    "directed_flows": 4,
+    "other_three_diagrams": "Customer unchanged; Barista and Manager login/business requests separated in the subsequent correction.",
+    "threat_attachments": "128 preserved unchanged",
+    "json_copies": "3 identical",
+    "visual_validation": "Corrected project imported into Threat Dragon; native Administrator PNG exported and inspected for connected arrows and readable labels."
+  },
+  "staff_login_separation": {
+    "status": "PASS",
+    "flow_counts": [
+      5,
+      7,
+      5,
+      4
+    ],
+    "total_directed_flows": 21,
+    "login_and_business_requests": "Separate arrows for Barista 2.1a/2.1b and Manager 3.1a/3.1b; Administrator login 4.1 separate from menu item submission 4.2.",
+    "grouping_review": "Every arrow carries at most two logical data items. Record fields remain together. Customer 1.5 carries new order plus payment status; 1.7 carries confirmation plus status update. All other arrows carry one logical payload.",
+    "schema_and_port_integrity": "PASS",
+    "threat_preservation": "All 128 original threat attachments unchanged.",
+    "copies": "Three byte-identical project JSON copies; updated native PNGs also copied to deliverables.",
+    "visual_validation": "All corrected diagrams imported into Threat Dragon; Administrator, Barista and Manager native PNG exports visually inspected."
+  }
 }

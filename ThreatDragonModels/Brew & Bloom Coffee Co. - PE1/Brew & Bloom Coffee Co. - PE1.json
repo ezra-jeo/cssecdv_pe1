@@ -1817,7 +1817,7 @@
         "diagramType": "STRIDE",
         "version": "2.6.2",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "description": "Section 5.2.2: Barista Updates Order Status. 6 directed data transfers, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
+        "description": "Section 5.2.2: Barista Updates Order Status. 7 directed data transfers, with separate login and business requests, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
         "cells": [
           {
             "position": {
@@ -1917,6 +1917,10 @@
                 {
                   "group": "right",
                   "id": "723dfc44-c1da-57b1-aca0-02453adda041"
+                },
+                {
+                  "group": "right",
+                  "id": "3281799f-9e0b-530e-a914-2872dc13516f"
                 },
                 {
                   "group": "left",
@@ -2812,7 +2816,7 @@
                 ],
                 "attrs": {
                   "labelText": {
-                    "text": "2.1 Login + incoming\norders request",
+                    "text": "2.1a Login request\n(credentials)",
                     "textAnchor": "middle",
                     "textVerticalAnchor": "middle",
                     "fontSize": 13,
@@ -2835,8 +2839,8 @@
             "connector": "rounded",
             "data": {
               "type": "tm.Flow",
-              "name": "2.1 Login + incoming\norders request",
-              "description": "Barista logs into the staff interface and requests incoming orders. Backend authenticates and authorizes in step 2.2.",
+              "name": "2.1a Login request\n(credentials)",
+              "description": "Step 2.1: staff frontend sends login credentials to the web application server. The business request is represented by a separate data flow. Authentication and authorization remain internal backend checks.",
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -2844,7 +2848,7 @@
               "hasOpenThreats": false,
               "isBidirectional": false
             },
-            "id": "5931c0e9-f439-5522-a8f3-e97556fe54e7",
+            "id": "70915581-15ce-5a22-90c3-18396cb55f73",
             "source": {
               "cell": "88df52a3-b16a-5272-ab92-dd53dac714bc",
               "port": "805ccdc2-44f5-5f6a-bf54-a0d48a0ef765"
@@ -2861,6 +2865,87 @@
               {
                 "x": 435,
                 "y": 215
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1.6,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 5,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "2.1b Incoming orders request",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle",
+                    "fontSize": 13,
+                    "fill": "#222222"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "offset": -17
+                }
+              }
+            ],
+            "connector": "rounded",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2.1b Incoming orders request",
+              "description": "Step 2.1: after logging in, the staff frontend sends the incoming orders request to the web application server. Login credentials are shown on a separate arrow.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isBidirectional": false
+            },
+            "id": "5931c0e9-f439-5522-a8f3-e97556fe54e7",
+            "source": {
+              "cell": "88df52a3-b16a-5272-ab92-dd53dac714bc",
+              "port": "356af3e2-6c86-573f-9763-3d01bdf95ee6"
+            },
+            "target": {
+              "cell": "5785065b-b315-595f-aeff-7830b04c0283",
+              "port": "ce72f515-932f-5f3f-8b9e-3d63638d9ccc"
+            },
+            "vertices": [
+              {
+                "x": 285,
+                "y": 285
+              },
+              {
+                "x": 435,
+                "y": 285
               }
             ]
           },
@@ -3085,9 +3170,18 @@
             },
             "target": {
               "cell": "88df52a3-b16a-5272-ab92-dd53dac714bc",
-              "port": "356af3e2-6c86-573f-9763-3d01bdf95ee6"
+              "port": "723dfc44-c1da-57b1-aca0-02453adda041"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 435,
+                "y": 415
+              },
+              {
+                "x": 285,
+                "y": 415
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -3153,7 +3247,7 @@
             "id": "9aba22b6-9606-5023-ab58-e29720e3afd5",
             "source": {
               "cell": "88df52a3-b16a-5272-ab92-dd53dac714bc",
-              "port": "723dfc44-c1da-57b1-aca0-02453adda041"
+              "port": "3281799f-9e0b-530e-a914-2872dc13516f"
             },
             "target": {
               "cell": "5785065b-b315-595f-aeff-7830b04c0283",
@@ -3162,11 +3256,11 @@
             "vertices": [
               {
                 "x": 285,
-                "y": 500
+                "y": 525
               },
               {
                 "x": 435,
-                "y": 500
+                "y": 525
               }
             ]
           },
@@ -3467,7 +3561,7 @@
         "diagramType": "STRIDE",
         "version": "2.6.2",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "description": "Section 5.2.3: Manager Accesses Basic Sales Reports. 4 directed data transfers, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
+        "description": "Section 5.2.3: Manager Accesses Basic Sales Reports. 5 directed data transfers, with separate login and business requests, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
         "cells": [
           {
             "position": {
@@ -3563,6 +3657,10 @@
                 {
                   "group": "right",
                   "id": "283f73ae-6b4b-5d57-aa82-386d74f0ce57"
+                },
+                {
+                  "group": "right",
+                  "id": "9356d3cd-3800-54a9-846e-db2a4720018e"
                 },
                 {
                   "group": "left",
@@ -4454,7 +4552,7 @@
                 ],
                 "attrs": {
                   "labelText": {
-                    "text": "3.1 Login + basic\nsales report request",
+                    "text": "3.1a Login request\n(credentials)",
                     "textAnchor": "middle",
                     "textVerticalAnchor": "middle",
                     "fontSize": 13,
@@ -4477,8 +4575,8 @@
             "connector": "rounded",
             "data": {
               "type": "tm.Flow",
-              "name": "3.1 Login + basic\nsales report request",
-              "description": "Manager logs in and requests basic sales reports from backend.",
+              "name": "3.1a Login request\n(credentials)",
+              "description": "Step 3.1: staff frontend sends login credentials to the web application server. The business request is represented by a separate data flow. Authentication and authorization remain internal backend checks.",
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -4486,7 +4584,7 @@
               "hasOpenThreats": false,
               "isBidirectional": false
             },
-            "id": "2b3d9206-07b7-5a57-9d44-95ab1b3470cb",
+            "id": "a16cd3f9-8c8d-57bf-b185-bdb2b251294d",
             "source": {
               "cell": "c13f16f0-4bf5-5487-a6c1-4850fe480af6",
               "port": "c0d5e0fe-e149-5ce8-ab2b-1244911f9581"
@@ -4505,6 +4603,78 @@
                 "y": 215
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1.6,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 5,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "3.1b Basic sales report request",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle",
+                    "fontSize": 13,
+                    "fill": "#222222"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "offset": -17
+                }
+              }
+            ],
+            "connector": "rounded",
+            "data": {
+              "type": "tm.Flow",
+              "name": "3.1b Basic sales report request",
+              "description": "Step 3.1: after logging in, the staff frontend sends the basic sales report request to the web application server. Login credentials are shown on a separate arrow.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isBidirectional": false
+            },
+            "id": "2b3d9206-07b7-5a57-9d44-95ab1b3470cb",
+            "source": {
+              "cell": "c13f16f0-4bf5-5487-a6c1-4850fe480af6",
+              "port": "283f73ae-6b4b-5d57-aa82-386d74f0ce57"
+            },
+            "target": {
+              "cell": "1c7c2679-5ef1-50a3-80b2-09219b0835cf",
+              "port": "818af5fc-216f-5bf0-804c-16ee37fd1c9c"
+            },
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -4736,7 +4906,7 @@
             },
             "target": {
               "cell": "c13f16f0-4bf5-5487-a6c1-4850fe480af6",
-              "port": "283f73ae-6b4b-5d57-aa82-386d74f0ce57"
+              "port": "9356d3cd-3800-54a9-846e-db2a4720018e"
             },
             "vertices": [
               {
@@ -4965,7 +5135,7 @@
         "diagramType": "STRIDE",
         "version": "2.6.2",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "description": "Section 5.2.4: Administrator Adds New Menu Item. 3 directed data transfers, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
+        "description": "Section 5.2.4: Administrator Adds New Menu Item. 4 directed data transfers, including the Administrator login request, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
         "cells": [
           {
             "position": {
@@ -5061,6 +5231,10 @@
                 {
                   "group": "right",
                   "id": "bcab6b87-2ad0-5005-a8ff-9808eb7c75ba"
+                },
+                {
+                  "group": "right",
+                  "id": "99c40956-a632-5407-bc21-72487e94a824"
                 },
                 {
                   "group": "left",
@@ -5948,6 +6122,87 @@
                 ],
                 "attrs": {
                   "labelText": {
+                    "text": "4.1 Login request\n(credentials)",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle",
+                    "fontSize": 13,
+                    "fill": "#222222"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "offset": -17
+                }
+              }
+            ],
+            "connector": "rounded",
+            "data": {
+              "type": "tm.Flow",
+              "name": "4.1 Login request\n(credentials)",
+              "description": "Administrator sends login credentials from the staff frontend to the web application server in step 4.1. Opening menu management remains a frontend action; validation and authorization in step 4.3 remain backend processing.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isBidirectional": false
+            },
+            "id": "1f34985e-275e-5046-a0ed-219e8d974d75",
+            "source": {
+              "cell": "e299de36-e20b-55b4-b77a-0493293fd48f",
+              "port": "bbb703c5-1fd6-550b-8ba6-030a82df590b"
+            },
+            "target": {
+              "cell": "f749c50e-9b28-5d09-8afc-73f7eba9c2d7",
+              "port": "2a2c0a24-71a5-5617-81da-480709826765"
+            },
+            "vertices": [
+              {
+                "x": 285,
+                "y": 215
+              },
+              {
+                "x": 435,
+                "y": 215
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1.6,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 5,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
                     "text": "4.2 New menu item details\n(name, description, price, etc.)",
                     "textAnchor": "middle",
                     "textVerticalAnchor": "middle",
@@ -5983,22 +6238,13 @@
             "id": "0e0f172c-f1d3-5fa0-8c63-a5aef019c772",
             "source": {
               "cell": "e299de36-e20b-55b4-b77a-0493293fd48f",
-              "port": "bbb703c5-1fd6-550b-8ba6-030a82df590b"
+              "port": "bcab6b87-2ad0-5005-a8ff-9808eb7c75ba"
             },
             "target": {
               "cell": "f749c50e-9b28-5d09-8afc-73f7eba9c2d7",
               "port": "2a2c0a24-71a5-5617-81da-480709826765"
             },
-            "vertices": [
-              {
-                "x": 285,
-                "y": 215
-              },
-              {
-                "x": 435,
-                "y": 215
-              }
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -6140,7 +6386,7 @@
             },
             "target": {
               "cell": "e299de36-e20b-55b4-b77a-0493293fd48f",
-              "port": "bcab6b87-2ad0-5005-a8ff-9808eb7c75ba"
+              "port": "99c40956-a632-5407-bc21-72487e94a824"
             },
             "vertices": [
               {
@@ -6270,7 +6516,7 @@
             },
             "attrs": {
               "text": {
-                "text": "4.1 Login + open menu management\n4.7 Receive addition confirmation",
+                "text": "4.1 Open menu management\n4.7 Receive addition confirmation",
                 "fontSize": 13,
                 "fill": "#333333"
               }
@@ -6279,7 +6525,7 @@
             "zIndex": 20,
             "data": {
               "type": "tm.Text",
-              "name": "4.1 Login + open menu management\n4.7 Receive addition confirmation",
+              "name": "4.1 Open menu management\n4.7 Receive addition confirmation",
               "hasOpenThreats": false
             }
           },
