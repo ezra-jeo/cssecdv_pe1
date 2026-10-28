@@ -2,7 +2,7 @@
   "version": "2.6.2",
   "summary": {
     "title": "Brew & Bloom Coffee Co. - PE1",
-    "owner": "Ezra Del Rosario",
+    "owner": "Almin, Del Rosario, Gan",
     "description": "PE1 Part 1: all four workflows from section 5.2. Boundaries follow section 5.1; threat titles, descriptions and affected-component mappings follow Table 2; severity uses Table 3 row counts. Source: Threat Model Document - Coffee Ordering Web App.pdf. Shared component threats are retained in each diagram.",
     "id": 0
   },
