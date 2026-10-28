@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "report": "deliverables\\Almin, Del Rosario, Gan - PE1.pdf",
+  "pages": 22,
+  "owner": "Almin, Del Rosario, Gan",
+  "workflow_count": 4,
+  "directed_flows": 24,
+  "flow_counts_customer_barista_manager_administrator": [
+    5,
+    8,
+    6,
+    5
+  ],
+  "threat_rows_verified": 128,
+  "threat_fields_compared": [
+    "number",
+    "title",
+    "type",
+    "severity",
+    "status",
+    "score",
+    "description"
+  ],
+  "severity_totals": {
+    "Medium": 96,
+    "High": 24,
+    "Low": 8
+  },
+  "all_flow_headings_and_descriptions_match_current_json": true,
+  "login_result_assumptions_included": true,
+  "visual_review": "All 22 rendered pages reviewed; four diagram pages inspected at higher resolution. No missing/clipped diagrams or missing threat rows found. Native pagination leaves some short continuation pages and one flow description starts on the following page; content is intact.",
+  "renaming_preserved_pdf_bytes": true,
+  "report_sha256": "62ccd550ee1eca1c09439517526ee98a6a83d53175541da36709281c3d8d6299",
+  "matching_json_and_png_copies": true,
+  "dread_matrix_preserved": true,
+  "artifacts": [
+    {
+      "path": "deliverables\\Almin, Del Rosario, Gan - PE1.pdf",
+      "sha256": "62ccd550ee1eca1c09439517526ee98a6a83d53175541da36709281c3d8d6299"
+    },
+    {
+      "path": "deliverables\\brew-and-bloom-pe1.json",
+      "sha256": "b7f0e2a087ef29b919f9bd962137d69dd01d10cace86817e80057bdaa548bb96"
+    },
+    {
+      "path": "deliverables\\customer-places-order.png",
+      "sha256": "19b78db9e025892e9838a810580d94e45166791dd849f5d2a44f011a9ecfc04b"
+    },
+    {
+      "path": "deliverables\\barista-updates-order-status.png",
+      "sha256": "899b32d33e7d9fe8a1353dcf5600a6259e49061ef88c0b1a70323b049a7b2fbc"
+    },
+    {
+      "path": "deliverables\\manager-accesses-basic-sales-reports.png",
+      "sha256": "6ca1f5de42266c2aeda11566f84857322f4cea867aceba88bcecbaa964ddbf1e"
+    },
+    {
+      "path": "deliverables\\administrator-adds-new-menu-item.png",
+      "sha256": "64bd86905739c019e2afa89dfe9fc189a4fc71589ed3c3cb3f580df8659c2a9d"
+    }
+  ]
+}

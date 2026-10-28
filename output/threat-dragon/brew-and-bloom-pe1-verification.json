@@ -147,7 +147,7 @@
     "manager-accesses-basic-sales-reports-in-threat-dragon.png",
     "administrator-adds-new-menu-item-in-threat-dragon.png"
   ],
-  "remaining_assignment_work": "User will regenerate the root Threat Dragon PDF report from the corrected model. Existing DREAD matrix is unchanged.",
+  "remaining_assignment_work": "Latest user-generated PDF report verified and packaged as deliverables/Almin, Del Rosario, Gan - PE1.pdf, alongside matching JSON and four PNGs. Existing DREAD matrix preserved. See report-verification.json for the report audit.",
   "administrator_login_correction": {
     "status": "PASS",
     "directed_flows": 5,
@@ -192,5 +192,6 @@
     "data_grouping": "Maximum two logical data items per arrow reviewed; credential and record fields remain one logical payload.",
     "structural_checks": "Official schema, all endpoints/ports, labels, unique cell IDs, flow directions, three identical JSON copies, identical deliverable PNG copies: PASS.",
     "visual_validation": "Corrected project imported into Threat Dragon. All three staff native PNG exports inspected for directions, connections, readable labels, visible assumption notes and absence of editor selection outlines."
-  }
+  },
+  "report_verification": "report-verification.json"
 }
