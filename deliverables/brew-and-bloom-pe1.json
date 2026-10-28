@@ -1817,7 +1817,7 @@
         "diagramType": "STRIDE",
         "version": "2.6.2",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "description": "Section 5.2.2: Barista Updates Order Status. 7 directed data transfers, with separate login and business requests, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
+        "description": "Section 5.2.2: Barista Updates Order Status. 8 directed data transfers, with separate login and business requests, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified. The separate login-result response is a modeling assumption: the source does not explicitly specify its payload. It carries success/failure only; no session implementation is asserted.",
         "cells": [
           {
             "position": {
@@ -1923,6 +1923,10 @@
                   "id": "3281799f-9e0b-530e-a914-2872dc13516f"
                 },
                 {
+                  "group": "right",
+                  "id": "ee55270a-56d3-522f-893a-673ca2fc3c69"
+                },
+                {
                   "group": "left",
                   "id": "9646662c-7568-586f-80e5-713d8fc5e135"
                 },
@@ -1939,7 +1943,7 @@
             "id": "88df52a3-b16a-5272-ab92-dd53dac714bc",
             "data": {
               "name": "Barista\nStaff Frontend",
-              "description": "Steps 2.1, 2.4-2.6: log in and request incoming orders, display the list, select an order and change its status, then submit the update. The staff frontend is untrusted. All Table 2 mappings are retained for this shared component, including threats concerning other workflows.",
+              "description": "Steps 2.1, 2.4-2.6: log in and request incoming orders, display the list, select an order and change its status, then submit the update. The staff frontend is untrusted. All Table 2 mappings are retained for this shared component, including threats concerning other workflows. A separate login-result response is included as an explicit modeling assumption, rather than an additional specification requirement.",
               "type": "tm.Actor",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -2897,6 +2901,87 @@
                 ],
                 "attrs": {
                   "labelText": {
+                    "text": "2.2a Login result*\n(success / failure)",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle",
+                    "fontSize": 13,
+                    "fill": "#222222"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "offset": -17
+                }
+              }
+            ],
+            "connector": "rounded",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2.2a Login result*\n(success / failure)",
+              "description": "MODELING ASSUMPTION: a separate authentication-result response returns login success or failure from the web application server to the staff frontend. Section 5.2 specifies login/authentication but does not explicitly describe this response. No token, cookie, session protocol, or credential store is assumed. Authentication and operation-specific authorization checks remain server processing; business data is returned on its existing separate flow.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isBidirectional": false
+            },
+            "id": "a45443d2-050a-5893-b4ec-49a904c90f02",
+            "source": {
+              "cell": "5785065b-b315-595f-aeff-7830b04c0283",
+              "port": "ce72f515-932f-5f3f-8b9e-3d63638d9ccc"
+            },
+            "target": {
+              "cell": "88df52a3-b16a-5272-ab92-dd53dac714bc",
+              "port": "356af3e2-6c86-573f-9763-3d01bdf95ee6"
+            },
+            "vertices": [
+              {
+                "x": 435,
+                "y": 275
+              },
+              {
+                "x": 285,
+                "y": 275
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1.6,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 5,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
                     "text": "2.1b Incoming orders request",
                     "textAnchor": "middle",
                     "textVerticalAnchor": "middle",
@@ -2932,22 +3017,13 @@
             "id": "5931c0e9-f439-5522-a8f3-e97556fe54e7",
             "source": {
               "cell": "88df52a3-b16a-5272-ab92-dd53dac714bc",
-              "port": "356af3e2-6c86-573f-9763-3d01bdf95ee6"
+              "port": "723dfc44-c1da-57b1-aca0-02453adda041"
             },
             "target": {
               "cell": "5785065b-b315-595f-aeff-7830b04c0283",
               "port": "ce72f515-932f-5f3f-8b9e-3d63638d9ccc"
             },
-            "vertices": [
-              {
-                "x": 285,
-                "y": 285
-              },
-              {
-                "x": 435,
-                "y": 285
-              }
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -2978,7 +3054,7 @@
                 ],
                 "attrs": {
                   "labelText": {
-                    "text": "2.2 Relevant order\ndata query",
+                    "text": "2.2b Relevant order\ndata query",
                     "textAnchor": "middle",
                     "textVerticalAnchor": "middle",
                     "fontSize": 13,
@@ -3001,7 +3077,7 @@
             "connector": "rounded",
             "data": {
               "type": "tm.Flow",
-              "name": "2.2 Relevant order\ndata query",
+              "name": "2.2b Relevant order\ndata query",
               "description": "After authenticating and authorizing the Barista, backend queries MongoDB for relevant order data.",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -3170,7 +3246,7 @@
             },
             "target": {
               "cell": "88df52a3-b16a-5272-ab92-dd53dac714bc",
-              "port": "723dfc44-c1da-57b1-aca0-02453adda041"
+              "port": "3281799f-9e0b-530e-a914-2872dc13516f"
             },
             "vertices": [
               {
@@ -3247,7 +3323,7 @@
             "id": "9aba22b6-9606-5023-ab58-e29720e3afd5",
             "source": {
               "cell": "88df52a3-b16a-5272-ab92-dd53dac714bc",
-              "port": "3281799f-9e0b-530e-a914-2872dc13516f"
+              "port": "ee55270a-56d3-522f-893a-673ca2fc3c69"
             },
             "target": {
               "cell": "5785065b-b315-595f-aeff-7830b04c0283",
@@ -3540,7 +3616,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Shared-component threats follow Table 2. Payment service is not part of this workflow.\nInternal actions appear as notes; no unspecified data transfers are added.",
+                "text": "* Login-result response is a modeling assumption; authentication and authorization checks remain on the server.\nShared-component threats follow Table 2. Payment service is not part of this workflow.",
                 "fontSize": 13,
                 "fill": "#333333"
               }
@@ -3549,7 +3625,7 @@
             "zIndex": 20,
             "data": {
               "type": "tm.Text",
-              "name": "Shared-component threats follow Table 2. Payment service is not part of this workflow.\nInternal actions appear as notes; no unspecified data transfers are added.",
+              "name": "* Login-result response is a modeling assumption; authentication and authorization checks remain on the server.\nShared-component threats follow Table 2. Payment service is not part of this workflow.",
               "hasOpenThreats": false
             }
           }
@@ -3561,7 +3637,7 @@
         "diagramType": "STRIDE",
         "version": "2.6.2",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "description": "Section 5.2.3: Manager Accesses Basic Sales Reports. 5 directed data transfers, with separate login and business requests, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
+        "description": "Section 5.2.3: Manager Accesses Basic Sales Reports. 6 directed data transfers, with separate login and business requests, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified. The separate login-result response is a modeling assumption: the source does not explicitly specify its payload. It carries success/failure only; no session implementation is asserted.",
         "cells": [
           {
             "position": {
@@ -3663,6 +3739,10 @@
                   "id": "9356d3cd-3800-54a9-846e-db2a4720018e"
                 },
                 {
+                  "group": "right",
+                  "id": "dd47fa2b-99ce-5fb2-bbf6-5b12833cf336"
+                },
+                {
                   "group": "left",
                   "id": "4de51ba2-bc34-5aca-b8fe-ad2ebda35675"
                 },
@@ -3679,7 +3759,7 @@
             "id": "c13f16f0-4bf5-5487-a6c1-4850fe480af6",
             "data": {
               "name": "Manager\nStaff Frontend",
-              "description": "Steps 3.1 and 3.5: log in, request basic sales reports, and display the report in the browser. The staff frontend is untrusted. All Table 2 mappings are retained for this shared component, including threats concerning other workflows.",
+              "description": "Steps 3.1 and 3.5: log in, request basic sales reports, and display the report in the browser. The staff frontend is untrusted. All Table 2 mappings are retained for this shared component, including threats concerning other workflows. A separate login-result response is included as an explicit modeling assumption, rather than an additional specification requirement.",
               "type": "tm.Actor",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -4633,6 +4713,87 @@
                 ],
                 "attrs": {
                   "labelText": {
+                    "text": "3.2a Login result*\n(success / failure)",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle",
+                    "fontSize": 13,
+                    "fill": "#222222"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "offset": -17
+                }
+              }
+            ],
+            "connector": "rounded",
+            "data": {
+              "type": "tm.Flow",
+              "name": "3.2a Login result*\n(success / failure)",
+              "description": "MODELING ASSUMPTION: a separate authentication-result response returns login success or failure from the web application server to the staff frontend. Section 5.2 specifies login/authentication but does not explicitly describe this response. No token, cookie, session protocol, or credential store is assumed. Authentication and operation-specific authorization checks remain server processing; business data is returned on its existing separate flow.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isBidirectional": false
+            },
+            "id": "4ee429d5-f321-54f3-9aad-7f877795e050",
+            "source": {
+              "cell": "1c7c2679-5ef1-50a3-80b2-09219b0835cf",
+              "port": "818af5fc-216f-5bf0-804c-16ee37fd1c9c"
+            },
+            "target": {
+              "cell": "c13f16f0-4bf5-5487-a6c1-4850fe480af6",
+              "port": "283f73ae-6b4b-5d57-aa82-386d74f0ce57"
+            },
+            "vertices": [
+              {
+                "x": 435,
+                "y": 275
+              },
+              {
+                "x": 285,
+                "y": 275
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1.6,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 5,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
                     "text": "3.1b Basic sales report request",
                     "textAnchor": "middle",
                     "textVerticalAnchor": "middle",
@@ -4668,7 +4829,7 @@
             "id": "2b3d9206-07b7-5a57-9d44-95ab1b3470cb",
             "source": {
               "cell": "c13f16f0-4bf5-5487-a6c1-4850fe480af6",
-              "port": "283f73ae-6b4b-5d57-aa82-386d74f0ce57"
+              "port": "9356d3cd-3800-54a9-846e-db2a4720018e"
             },
             "target": {
               "cell": "1c7c2679-5ef1-50a3-80b2-09219b0835cf",
@@ -4705,7 +4866,7 @@
                 ],
                 "attrs": {
                   "labelText": {
-                    "text": "3.2 Aggregated\nsales data query",
+                    "text": "3.2b Aggregated\nsales data query",
                     "textAnchor": "middle",
                     "textVerticalAnchor": "middle",
                     "fontSize": 13,
@@ -4728,7 +4889,7 @@
             "connector": "rounded",
             "data": {
               "type": "tm.Flow",
-              "name": "3.2 Aggregated\nsales data query",
+              "name": "3.2b Aggregated\nsales data query",
               "description": "Backend authenticates and authorizes Manager, then queries MongoDB for aggregated sales data.",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -4906,7 +5067,7 @@
             },
             "target": {
               "cell": "c13f16f0-4bf5-5487-a6c1-4850fe480af6",
-              "port": "9356d3cd-3800-54a9-846e-db2a4720018e"
+              "port": "dd47fa2b-99ce-5fb2-bbf6-5b12833cf336"
             },
             "vertices": [
               {
@@ -5114,7 +5275,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Shared-component threats follow Table 2. Payment service is not part of this workflow.\nInternal actions appear as notes; no unspecified data transfers are added.",
+                "text": "* Login-result response is a modeling assumption; authentication and authorization checks remain on the server.\nShared-component threats follow Table 2. Payment service is not part of this workflow.",
                 "fontSize": 13,
                 "fill": "#333333"
               }
@@ -5123,7 +5284,7 @@
             "zIndex": 20,
             "data": {
               "type": "tm.Text",
-              "name": "Shared-component threats follow Table 2. Payment service is not part of this workflow.\nInternal actions appear as notes; no unspecified data transfers are added.",
+              "name": "* Login-result response is a modeling assumption; authentication and authorization checks remain on the server.\nShared-component threats follow Table 2. Payment service is not part of this workflow.",
               "hasOpenThreats": false
             }
           }
@@ -5135,7 +5296,7 @@
         "diagramType": "STRIDE",
         "version": "2.6.2",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "description": "Section 5.2.4: Administrator Adds New Menu Item. 4 directed data transfers, including the Administrator login request, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified.",
+        "description": "Section 5.2.4: Administrator Adds New Menu Item. 5 directed data transfers, including the Administrator login request, three components and two trust boundaries. Internal actions are notes. No payment gateway is specified for this workflow. All Table 2 mappings are retained for present shared components; severity follows Table 3 counts. No implementation security controls are independently verified. The separate login-result response is a modeling assumption: the source does not explicitly specify its payload. It carries success/failure only; no session implementation is asserted.",
         "cells": [
           {
             "position": {
@@ -5237,6 +5398,10 @@
                   "id": "99c40956-a632-5407-bc21-72487e94a824"
                 },
                 {
+                  "group": "right",
+                  "id": "60e6032e-bbac-52af-b541-daeae3a0197e"
+                },
+                {
                   "group": "left",
                   "id": "c8ecce6c-1ede-510a-83fd-1c6a0f230e99"
                 },
@@ -5253,7 +5418,7 @@
             "id": "e299de36-e20b-55b4-b77a-0493293fd48f",
             "data": {
               "name": "Administrator\nStaff Frontend",
-              "description": "Step 4.1: log into the staff interface and navigate to menu management. Step 4.2: enter and submit new menu item details. Step 4.7: receive addition confirmation. The staff frontend is untrusted. All Table 2 mappings are retained for this shared component, including threats concerning other workflows.",
+              "description": "Step 4.1: log into the staff interface and navigate to menu management. Step 4.2: enter and submit new menu item details. Step 4.7: receive addition confirmation. The staff frontend is untrusted. All Table 2 mappings are retained for this shared component, including threats concerning other workflows. A separate login-result response is included as an explicit modeling assumption, rather than an additional specification requirement.",
               "type": "tm.Actor",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -5413,7 +5578,7 @@
             "id": "f749c50e-9b28-5d09-8afc-73f7eba9c2d7",
             "data": {
               "name": "Web Application\nServer\n(Node.js Backend)",
-              "description": "Step 4.3: validate new menu item input and authorize Administrator request. Step 4.4: send data to MongoDB for creation. Step 4.6: confirm successful addition to Administrator. All Table 2 mappings are retained for this shared component, including threats concerning other workflows.",
+              "description": "Step 4.1 login implies backend authentication of the Administrator. Step 4.3: validate new menu item input and authorize Administrator request. Step 4.4: send data to MongoDB for creation. Step 4.6: confirm successful addition to Administrator. All Table 2 mappings are retained for this shared component, including threats concerning other workflows.",
               "type": "tm.Process",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -6122,7 +6287,7 @@
                 ],
                 "attrs": {
                   "labelText": {
-                    "text": "4.1 Login request\n(credentials)",
+                    "text": "4.1a Login request\n(credentials)",
                     "textAnchor": "middle",
                     "textVerticalAnchor": "middle",
                     "fontSize": 13,
@@ -6145,7 +6310,7 @@
             "connector": "rounded",
             "data": {
               "type": "tm.Flow",
-              "name": "4.1 Login request\n(credentials)",
+              "name": "4.1a Login request\n(credentials)",
               "description": "Administrator sends login credentials from the staff frontend to the web application server in step 4.1. Opening menu management remains a frontend action; validation and authorization in step 4.3 remain backend processing.",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -6171,6 +6336,87 @@
               {
                 "x": 435,
                 "y": 215
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1.6,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": ""
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 5,
+            "labels": [
+              {
+                "markup": [
+                  {
+                    "tagName": "ellipse",
+                    "selector": "labelBody"
+                  },
+                  {
+                    "tagName": "text",
+                    "selector": "labelText"
+                  }
+                ],
+                "attrs": {
+                  "labelText": {
+                    "text": "4.1b Login result*\n(success / failure)",
+                    "textAnchor": "middle",
+                    "textVerticalAnchor": "middle",
+                    "fontSize": 13,
+                    "fill": "#222222"
+                  },
+                  "labelBody": {
+                    "ref": "labelText",
+                    "refRx": "50%",
+                    "refRy": "60%",
+                    "fill": "#fff",
+                    "strokeWidth": 0
+                  }
+                },
+                "position": {
+                  "distance": 0.5,
+                  "offset": -17
+                }
+              }
+            ],
+            "connector": "rounded",
+            "data": {
+              "type": "tm.Flow",
+              "name": "4.1b Login result*\n(success / failure)",
+              "description": "MODELING ASSUMPTION: a separate authentication-result response returns login success or failure from the web application server to the staff frontend. Section 5.2 specifies login/authentication but does not explicitly describe this response. No token, cookie, session protocol, or credential store is assumed. Authentication and operation-specific authorization checks remain server processing; business data is returned on its existing separate flow.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isBidirectional": false
+            },
+            "id": "19312c4c-7009-52ee-9ef6-5af9c10c430e",
+            "source": {
+              "cell": "f749c50e-9b28-5d09-8afc-73f7eba9c2d7",
+              "port": "2a2c0a24-71a5-5617-81da-480709826765"
+            },
+            "target": {
+              "cell": "e299de36-e20b-55b4-b77a-0493293fd48f",
+              "port": "bcab6b87-2ad0-5005-a8ff-9808eb7c75ba"
+            },
+            "vertices": [
+              {
+                "x": 435,
+                "y": 275
+              },
+              {
+                "x": 285,
+                "y": 275
               }
             ]
           },
@@ -6238,7 +6484,7 @@
             "id": "0e0f172c-f1d3-5fa0-8c63-a5aef019c772",
             "source": {
               "cell": "e299de36-e20b-55b4-b77a-0493293fd48f",
-              "port": "bcab6b87-2ad0-5005-a8ff-9808eb7c75ba"
+              "port": "99c40956-a632-5407-bc21-72487e94a824"
             },
             "target": {
               "cell": "f749c50e-9b28-5d09-8afc-73f7eba9c2d7",
@@ -6386,7 +6632,7 @@
             },
             "target": {
               "cell": "e299de36-e20b-55b4-b77a-0493293fd48f",
-              "port": "99c40956-a632-5407-bc21-72487e94a824"
+              "port": "60e6032e-bbac-52af-b541-daeae3a0197e"
             },
             "vertices": [
               {
@@ -6542,7 +6788,7 @@
             },
             "attrs": {
               "text": {
-                "text": "4.3 Validate input + authorize\nAdministrator request",
+                "text": "4.1 Authenticate login\n4.3 Validate input + authorize request",
                 "fontSize": 13,
                 "fill": "#333333"
               }
@@ -6551,7 +6797,7 @@
             "zIndex": 20,
             "data": {
               "type": "tm.Text",
-              "name": "4.3 Validate input + authorize\nAdministrator request",
+              "name": "4.1 Authenticate login\n4.3 Validate input + authorize request",
               "hasOpenThreats": false
             }
           },
@@ -6594,7 +6840,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Shared-component threats follow Table 2. Payment service is not part of this workflow.\nInternal actions appear as notes; no unspecified data transfers are added.",
+                "text": "* Login-result response is a modeling assumption; authentication and authorization checks remain on the server.\nShared-component threats follow Table 2. Payment service is not part of this workflow.",
                 "fontSize": 13,
                 "fill": "#333333"
               }
@@ -6603,7 +6849,7 @@
             "zIndex": 20,
             "data": {
               "type": "tm.Text",
-              "name": "Shared-component threats follow Table 2. Payment service is not part of this workflow.\nInternal actions appear as notes; no unspecified data transfers are added.",
+              "name": "* Login-result response is a modeling assumption; authentication and authorization checks remain on the server.\nShared-component threats follow Table 2. Payment service is not part of this workflow.",
               "hasOpenThreats": false
             }
           }
