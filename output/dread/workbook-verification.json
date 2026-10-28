@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "output": "deliverables/DREAD-Matrix.xlsx",
+  "records": 19,
+  "input_source": "deliverables/DREAD-Matrix.csv",
+  "formulas": {
+    "affected_users": "=C2",
+    "probability": "=SUM(D2:E2,G2)",
+    "impact": "=SUM(C2,F2)",
+    "risk": "=B2*H2*I2",
+    "rank": "=1+COUNTIFS($J$2:$J$20,\">\"&J2)"
+  },
+  "source_preservation": "All 19 rows, inputs, URLs and notes retained. All calculated values and competition ranks match the CSV.",
+  "recalculation": "Artifact Tool recalculation passed for every row. Damage change propagates to affected users, impact and risk; reproducibility change propagates to probability, risk and ranking; zero reproducibility tested; original values restored.",
+  "saved_workbook": "Exported and reimported XLSX values and formulas match. Formula expressions and cached values inspected separately in the XLSX package.",
+  "formula_errors": "None",
+  "native_excel_execution": "Not run in Microsoft Excel. Verified with Artifact Tool calculation and export/reimport.",
+  "visual_validation": "PASS: numeric matrix and sources/notes ranges rendered and inspected; headers, figures, vulnerability names and notes are readable without clipping.",
+  "saved_xml_validation": "PASS: F, H, I, J and K cells contain formulas for all 19 records; cached results equal CSV values; header row and vulnerability column frozen."
+}
